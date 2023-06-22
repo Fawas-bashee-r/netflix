@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix/presantation/home/costum_widget.dart';
-import 'package:netflix/presantation/widgets/app_bar_widget.dart';
 
 import '../../core/colors/constant.dart';
 import 'coming_soon.dart';
+import 'everyones_watching.dart';
 
 class ScreenNewAndHot extends StatelessWidget {
   const ScreenNewAndHot({super.key});
@@ -25,7 +23,7 @@ class ScreenNewAndHot extends StatelessWidget {
                       fontSize: 30, fontWeight: FontWeight.bold),
                 ),
                 actions: [
-                  Icon(
+                  const Icon(
                     Icons.cast,
                     size: 30,
                     color: Colors.white,
@@ -50,8 +48,8 @@ class ScreenNewAndHot extends StatelessWidget {
                     indicator: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(30)),
-                    labelStyle:
-                        TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+                    labelStyle: const TextStyle(
+                        fontSize: 17, fontWeight: FontWeight.bold),
                     tabs: const [
                       Tab(
                         text: "🍿Coming Soon",
@@ -70,13 +68,17 @@ class ScreenNewAndHot extends StatelessWidget {
 
   Widget _buildComingSoon() {
     return ListView.builder(
-      itemBuilder: (context, index) => ComingSoonWidget(),
+      itemBuilder: (context, index) => const ComingSoonWidget(),
       itemCount: 7,
       shrinkWrap: true,
     );
   }
 
   Widget _buildEveryonesWatching() {
-    return const SizedBox();
+    return ListView.builder(
+      itemBuilder: (context, index) => const EveryonesWatchingWidget(),
+      itemCount: 10,
+      shrinkWrap: true,
+    );
   }
 }

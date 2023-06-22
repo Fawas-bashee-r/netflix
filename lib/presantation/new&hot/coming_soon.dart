@@ -1,7 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:netflix/presantation/new&hot/video_widget.dart';
 
-import '../../core/colors/constant.dart';
 import '../home/costum_widget.dart';
 
 class ComingSoonWidget extends StatelessWidget {
@@ -40,31 +39,11 @@ class ComingSoonWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Stack(
-              children: [
-                SizedBox(
-                  width: double.infinity,
-                  height: 200,
-                  child: Image.network(
-                    newAndhotImage,
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                Positioned(
-                  bottom: 10,
-                  right: 10,
-                  child: CircleAvatar(
-                      backgroundColor: Colors.black.withOpacity(0.5),
-                      radius: 20,
-                      child: IconButton(
-                          onPressed: () {}, icon: Icon(Icons.volume_off))),
-                ),
-              ],
-            ),
-            SizedBox(
+            const VideoWidget(),
+            const SizedBox(
               height: 5,
             ),
             Row(
@@ -92,14 +71,14 @@ class ComingSoonWidget extends StatelessWidget {
                 )
               ],
             ),
-            Text(
+            const Text(
               "Coming on Friday",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
             ),
-            SizedBox(height: 10),
-            Text("The Witcher",
+            const SizedBox(height: 10),
+            const Text("The Witcher",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
-            Text(
+            const Text(
               "Destiny brought them together. Dangerous forces are trying to tear them apart. Gerald and Yennefer fight to keep Ciri safe as war brews on the Continent.",
               style: TextStyle(color: Colors.grey),
             )

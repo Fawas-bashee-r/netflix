@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:glass_kit/glass_kit.dart';
+
 import 'package:netflix/core/colors/constant.dart';
 
 import 'package:netflix/presantation/home/number_card.dart';
@@ -42,7 +42,7 @@ class ScreenHome extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
-                                  image: DecorationImage(
+                                  image: const DecorationImage(
                                       image: NetworkImage(kimage),
                                       fit: BoxFit.fill)),
                               width: 400,
@@ -59,23 +59,23 @@ class ScreenHome extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                   const Customwidget(
                                     title: "My List",
                                     icon: Icons.add,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 20,
                                   ),
                                   _playButton(),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 30,
                                   ),
                                   const Customwidget(
                                       icon: Icons.info_outline, title: "Info"),
-                                  SizedBox(
+                                  const SizedBox(
                                     width: 10,
                                   ),
                                 ],
@@ -84,10 +84,10 @@ class ScreenHome extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
-                      NumberTitleCard(),
+                      const NumberTitleCard(),
                     ]),
                     scrollNotifier.value == true
                         ? Column(
@@ -102,15 +102,15 @@ class ScreenHome extends StatelessWidget {
                                       width: 70,
                                       height: 70,
                                     ),
-                                    Spacer(),
-                                    Icon(
+                                    const Spacer(),
+                                    const Icon(
                                       Icons.cast,
                                       size: 30,
                                       color: Colors.white,
                                     ),
                                     kWidth,
                                     Container(
-                                      decoration: BoxDecoration(
+                                      decoration: const BoxDecoration(
                                           image: DecorationImage(
                                               image: NetworkImage(
                                                   "https://media.istockphoto.com/id/1313958250/vector/user-avatar-profile-icon-black-vector-illustration-on-transparent-background-website-or-app.jpg?s=612x612&w=0&k=20&c=oGGyxXc1jaRAopcs4ZEkZ1LbtAoQwKp4Q0niLvJNk-o="),
@@ -118,7 +118,7 @@ class ScreenHome extends StatelessWidget {
                                       width: 25,
                                       height: 25,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 15,
                                     )
                                   ],
@@ -150,7 +150,7 @@ class ScreenHome extends StatelessWidget {
                               )
                             ],
                           )
-                        : SizedBox(
+                        : const SizedBox(
                             height: 10,
                           ),
                   ],
@@ -190,7 +190,7 @@ class NumberTitleCard extends StatelessWidget {
     return Column(
       children: [
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          SearchTextTitle(title: "Top 10 Tv shows in India Today"),
+          const SearchTextTitle(title: "Top 10 Tv shows in India Today"),
           LimitedBox(
             maxHeight: 210,
             child: Padding(
@@ -225,10 +225,10 @@ class NumberTitleCard extends StatelessWidget {
           height: 15,
         ),
         const MainTitleCard(title: "South Indain Cinema"),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
-        MainTitleCard(title: "Tense Dramas")
+        const MainTitleCard(title: "Tense Dramas")
       ],
     );
   }
@@ -245,7 +245,7 @@ class MainTitleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       SearchTextTitle(title: title),
-      SizedBox(
+      const SizedBox(
         height: 0,
       ),
       LimitedBox(
@@ -255,7 +255,7 @@ class MainTitleCard extends StatelessWidget {
           child: ListView.separated(
             shrinkWrap: true,
             itemBuilder: ((context, index) => const MainCard()),
-            separatorBuilder: (context, index) => SizedBox(
+            separatorBuilder: (context, index) => const SizedBox(
               width: 20,
             ),
             itemCount: 10,
