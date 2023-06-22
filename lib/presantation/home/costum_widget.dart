@@ -4,24 +4,27 @@ import 'package:flutter/material.dart';
 class Customwidget extends StatelessWidget {
   final IconData icon;
   final String title;
-  const Customwidget({
-    super.key,
-    required this.icon,
-    required this.title,
-  });
+  final double iconSize;
+  final double textSize;
+  const Customwidget(
+      {super.key,
+      required this.icon,
+      required this.title,
+      this.iconSize = 30,
+      this.textSize = 18});
 
   @override
   Widget build(BuildContext context) {
     return Column(children: [
       Icon(
         icon,
-        size: 30,
+        size: iconSize,
         color: Colors.white.withOpacity(.7),
       ),
       Text(
         title,
         style: TextStyle(
-          fontSize: 18,
+          fontSize: textSize,
         ),
       )
     ]);

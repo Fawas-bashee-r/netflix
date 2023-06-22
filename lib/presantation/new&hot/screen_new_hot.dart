@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix/presantation/home/costum_widget.dart';
 import 'package:netflix/presantation/widgets/app_bar_widget.dart';
 
 import '../../core/colors/constant.dart';
+import 'coming_soon.dart';
 
 class ScreenNewAndHot extends StatelessWidget {
   const ScreenNewAndHot({super.key});
@@ -30,7 +32,7 @@ class ScreenNewAndHot extends StatelessWidget {
                   ),
                   kWidth,
                   Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         image: DecorationImage(
                             image: NetworkImage(
                                 "https://media.istockphoto.com/id/1313958250/vector/user-avatar-profile-icon-black-vector-illustration-on-transparent-background-website-or-app.jpg?s=612x612&w=0&k=20&c=oGGyxXc1jaRAopcs4ZEkZ1LbtAoQwKp4Q0niLvJNk-o="),
@@ -60,13 +62,21 @@ class ScreenNewAndHot extends StatelessWidget {
                     ]),
               )),
           body: TabBarView(children: [
-            _buildTabBarView("he"),
-            _buildTabBarView("hoy"),
+            _buildComingSoon(),
+            _buildEveryonesWatching(),
           ]),
         ));
   }
 
-  _buildTabBarView(String name) {
-    return Center(child: Text("$name"));
+  Widget _buildComingSoon() {
+    return ListView.builder(
+      itemBuilder: (context, index) => ComingSoonWidget(),
+      itemCount: 7,
+      shrinkWrap: true,
+    );
+  }
+
+  Widget _buildEveryonesWatching() {
+    return const SizedBox();
   }
 }
