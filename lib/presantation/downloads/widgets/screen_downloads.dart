@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix/core/colors/constant.dart';
+import 'package:netflix/core/constant.dart';
 import 'package:netflix/presantation/widgets/app_bar_widget.dart';
 
 class ScreenDownloads extends StatelessWidget {

@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-import 'package:netflix/core/colors/constant.dart';
+import 'package:netflix/core/constant.dart';
 
 import 'package:netflix/presantation/home/number_card.dart';
 import 'package:netflix/presantation/search/widgets/title.dart';

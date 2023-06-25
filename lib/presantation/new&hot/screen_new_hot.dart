@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../core/colors/constant.dart';
+import '../../core/constant.dart';
 import 'coming_soon.dart';
 import 'everyones_watching.dart';
 
