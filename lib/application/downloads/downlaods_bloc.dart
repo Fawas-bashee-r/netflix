@@ -1,6 +1,9 @@
+import 'dart:math';
+
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:netflix/domain/downloads/i_downloads_repo.dart';
 
 import '../../domain/core/failures/main_failure.dart';
@@ -10,6 +13,7 @@ part 'downlaods_event.dart';
 part 'downlaods_state.dart';
 part 'downlaods_bloc.freezed.dart';
 
+@Injectable()
 class DownlaodsBloc extends Bloc<DownlaodsEvent, DownlaodsState> {
   final IDownloadRepo _downloadRepo;
   DownlaodsBloc(this._downloadRepo) : super(DownlaodsState.initial()) {

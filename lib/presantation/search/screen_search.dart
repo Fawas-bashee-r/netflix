@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix/core/colors/constant.dart';
+import 'package:netflix/core/constant.dart';
 import 'package:netflix/presantation/search/widgets/search_idle.dart';
 import 'package:netflix/presantation/search/widgets/search_result.dart';
 
