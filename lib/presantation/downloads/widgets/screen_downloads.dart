@@ -72,17 +72,17 @@ class Section2 extends StatelessWidget {
                         backgroundColor: Colors.grey.withOpacity(0.3),
                       ),
                       DownloadsImageWidget(
-                        imageList: '$imageUrl${state.downloads?[1].posterPath}',
+                        imageList: '$imageUrls${state.downloads[1].posterPath}',
                         margin: EdgeInsets.only(left: 165, bottom: 50),
                         angle: 20,
                       ),
                       DownloadsImageWidget(
-                        imageList: '$imageUrl${state.downloads?[4].posterPath}',
+                        imageList: '$imageUrls${state.downloads[4].posterPath}',
                         margin: EdgeInsets.only(right: 165, bottom: 50),
                         angle: -20,
                       ),
                       DownloadsImageWidget(
-                        imageList: '$imageUrl${state.downloads?[2].posterPath}',
+                        imageList: '$imageUrls${state.downloads[2].posterPath}',
                         margin: EdgeInsets.only(left: 0),
                       )
                     ]),

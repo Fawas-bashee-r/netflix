@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflix/application/downloads/downlaods_bloc.dart';
+import 'package:netflix/application/search/search_bloc.dart';
 import 'package:netflix/core/di/injectable.dart';
 import 'package:netflix/presantation/main%20page/widgets/screen_main_page.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,6 +22,9 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (ctx) => getIt<DownlaodsBloc>(),
         ),
+        BlocProvider(
+          create: (ctx) => getIt<SearchBloc>(),
+        )
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,

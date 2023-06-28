@@ -15,4 +15,4 @@ const newAndhotImage =
 const buildrr =
     "flutter packages pub run build_runner watch --use-polling-watcher --delete-conflicting-outputs";
 
-const imageUrl = "https://image.tmdb.org/t/p/w500";
+const imageUrls = "https://image.tmdb.org/t/p/w500";
