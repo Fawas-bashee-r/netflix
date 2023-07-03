@@ -66,26 +66,32 @@ class Section2 extends StatelessWidget {
               height: 330,
               child: state.isLoaoding
                   ? Center(child: CircularProgressIndicator())
-                  : Stack(alignment: Alignment.center, children: [
-                      CircleAvatar(
-                        radius: size.width * 0.37,
-                        backgroundColor: Colors.grey.withOpacity(0.3),
-                      ),
-                      DownloadsImageWidget(
-                        imageList: '$imageUrls${state.downloads[1].posterPath}',
-                        margin: EdgeInsets.only(left: 165, bottom: 50),
-                        angle: 20,
-                      ),
-                      DownloadsImageWidget(
-                        imageList: '$imageUrls${state.downloads[4].posterPath}',
-                        margin: EdgeInsets.only(right: 165, bottom: 50),
-                        angle: -20,
-                      ),
-                      DownloadsImageWidget(
-                        imageList: '$imageUrls${state.downloads[2].posterPath}',
-                        margin: EdgeInsets.only(left: 0),
-                      )
-                    ]),
+                  : Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        CircleAvatar(
+                          radius: size.width * 0.37,
+                          backgroundColor: Colors.grey.withOpacity(0.3),
+                        ),
+                        DownloadsImageWidget(
+                          imageList:
+                              '$imageUrls${state.downloads[1].posterPath}',
+                          margin: EdgeInsets.only(left: 165, bottom: 50),
+                          angle: 20,
+                        ),
+                        DownloadsImageWidget(
+                          imageList:
+                              '$imageUrls${state.downloads[4].posterPath}',
+                          margin: EdgeInsets.only(right: 165, bottom: 50),
+                          angle: -20,
+                        ),
+                        DownloadsImageWidget(
+                          imageList:
+                              '$imageUrls${state.downloads[2].posterPath}',
+                          margin: EdgeInsets.only(left: 0),
+                        ),
+                      ],
+                    ),
             );
           },
         )

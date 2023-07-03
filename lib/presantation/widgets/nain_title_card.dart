@@ -23,7 +23,7 @@ class MainTitleCard extends StatelessWidget {
           padding: const EdgeInsets.all(10.0),
           child: ListView.separated(
             shrinkWrap: true,
-            itemBuilder: ((context, index) => const MainCard()),
+            itemBuilder: ((context, index) => const SizedBox()),
             separatorBuilder: (context, index) => SizedBox(
               width: 20,
             ),

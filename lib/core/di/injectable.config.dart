@@ -9,7 +9,8 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import '../../application/downloads/downlaods_bloc.dart' as _i7;
-import '../../application/search/search_bloc.dart' as _i8;
+import '../../application/fast_laugh/fast_laugh_bloc.dart' as _i8;
+import '../../application/search/search_bloc.dart' as _i9;
 import '../../domain/downloads/i_downloads_repo.dart' as _i3;
 import '../../domain/search/model/search_screen/i_screen_repo.dart' as _i5;
 import '../../infrastructure/downloads/downloads_repository.dart' as _i4;
@@ -32,7 +33,9 @@ _i1.GetIt $initGetIt(
   gh.lazySingleton<_i5.SearchService>(() => _i6.SearchImpl());
   gh.factory<_i7.DownlaodsBloc>(
       () => _i7.DownlaodsBloc(get<_i3.IDownloadRepo>()));
-  gh.factory<_i8.SearchBloc>(() => _i8.SearchBloc(
+  gh.factory<_i8.FastLaughBloc>(
+      () => _i8.FastLaughBloc(get<_i3.IDownloadRepo>()));
+  gh.factory<_i9.SearchBloc>(() => _i9.SearchBloc(
         get<_i3.IDownloadRepo>(),
         get<_i5.SearchService>(),
       ));

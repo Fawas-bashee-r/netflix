@@ -7,7 +7,7 @@ part 'search_screen.g.dart';
 @JsonSerializable()
 class SearchScreen {
   @JsonKey(name: 'results')
-  List<SearchResult>? results;
+  List<SearchResult> results;
 
   SearchScreen({
     this.results = const [],

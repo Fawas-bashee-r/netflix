@@ -23,7 +23,7 @@ class SearchIdle extends StatelessWidget {
         const SearchTextTitle(
           title: "Top Searches",
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         BlocBuilder<SearchBloc, SearchState>(
@@ -37,7 +37,7 @@ class SearchIdle extends StatelessWidget {
                 child: Text("Error Occured"),
               );
             } else if (state.idleList.isEmpty) {
-              return Center(
+              return const Center(
                 child: Text("List is empty"),
               );
             }
@@ -51,7 +51,7 @@ class SearchIdle extends StatelessWidget {
                       imageUrl: "$imageUrls${movie.posterPath}",
                     );
                   }),
-                  separatorBuilder: (context, index) => SizedBox(
+                  separatorBuilder: (context, index) => const SizedBox(
                         height: 20,
                       ),
                   itemCount: state.idleList.length),
