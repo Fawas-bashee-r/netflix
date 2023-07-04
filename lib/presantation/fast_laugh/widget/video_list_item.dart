@@ -33,8 +33,9 @@ class VideoListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final posterPath = VideoListItemInherited.of(context)?.movieData.posterPath;
     final videoUrl = dummyvideoUrls[index % dummyvideoUrls.length];
+    // print(dummyvideoUrls.length);
     return Stack(children: [
-      VideoPlayers(videoUrl: videoUrl, onStateChanged: (bool) {}),
+      VideoPlayers(videoUrl: videoUrl, onStateChanged: (r) {}),
       Align(
         alignment: Alignment.bottomLeft,
         child: Padding(

@@ -30,7 +30,7 @@ class ScreenDownloads extends StatelessWidget {
 }
 
 class Section2 extends StatelessWidget {
-  Section2({super.key});
+  Section2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -45,14 +45,15 @@ class Section2 extends StatelessWidget {
         Text(
           "Introducing Downloads for you",
           style: GoogleFonts.actor(
-              color: Colors.white, fontSize: 25, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+          ),
           textAlign: TextAlign.center,
         ),
-        SizedBox(
-          height: 25,
-        ),
+        SizedBox(height: 25),
         const Text(
-          "We will download a personalized selection of\n movies and shows for you,so there is\n always something to watch on\n your device ",
+          "We will download a personalized selection of\nmovies and shows for you, so there is\nalways something to watch on\nyour device",
           style: TextStyle(
             color: Colors.grey,
             fontSize: 16,
@@ -61,40 +62,47 @@ class Section2 extends StatelessWidget {
         ),
         BlocBuilder<DownlaodsBloc, DownlaodsState>(
           builder: (context, state) {
-            return SizedBox(
-              width: 300,
-              height: 330,
-              child: state.isLoaoding
-                  ? Center(child: CircularProgressIndicator())
-                  : Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        CircleAvatar(
-                          radius: size.width * 0.37,
-                          backgroundColor: Colors.grey.withOpacity(0.3),
-                        ),
-                        DownloadsImageWidget(
-                          imageList:
-                              '$imageUrls${state.downloads[1].posterPath}',
-                          margin: EdgeInsets.only(left: 165, bottom: 50),
-                          angle: 20,
-                        ),
-                        DownloadsImageWidget(
-                          imageList:
-                              '$imageUrls${state.downloads[4].posterPath}',
-                          margin: EdgeInsets.only(right: 165, bottom: 50),
-                          angle: -20,
-                        ),
-                        DownloadsImageWidget(
-                          imageList:
-                              '$imageUrls${state.downloads[2].posterPath}',
-                          margin: EdgeInsets.only(left: 0),
-                        ),
-                      ],
+            if (state.isLoaoding) {
+              return SizedBox(
+                width: 300,
+                height: 330,
+                child: Center(child: CircularProgressIndicator()),
+              );
+            } else if (state.downloads.isNotEmpty &&
+                state.downloads.length >= 5) {
+              return SizedBox(
+                width: 300,
+                height: 330,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    CircleAvatar(
+                      radius: size.width * 0.37,
+                      backgroundColor: Colors.grey.withOpacity(0.3),
                     ),
-            );
+                    DownloadsImageWidget(
+                      imageList: '$imageUrls${state.downloads[1].posterPath}',
+                      margin: EdgeInsets.only(left: 165, bottom: 50),
+                      angle: 20,
+                    ),
+                    DownloadsImageWidget(
+                      imageList: '$imageUrls${state.downloads[4].posterPath}',
+                      margin: EdgeInsets.only(right: 165, bottom: 50),
+                      angle: -20,
+                    ),
+                    DownloadsImageWidget(
+                      imageList: '$imageUrls${state.downloads[2].posterPath}',
+                      margin: EdgeInsets.only(left: 0),
+                    ),
+                  ],
+                ),
+              );
+            } else {
+              return SizedBox
+                  .shrink(); // Return an empty-sized widget if the downloads list is empty or insufficient
+            }
           },
-        )
+        ),
       ],
     );
   }
